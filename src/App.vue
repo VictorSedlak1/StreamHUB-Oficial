@@ -22,11 +22,204 @@
 </div>
 </div>
 
+<div>
+  <h1 class="titulo-planos">
+    Escolha seu plano Multitelas
+  </h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+      <ul>
+        <li>Aproveite em todos os seus dispositivos.</li>
+      </ul>
+    </div>
+    <div class="col-1">
+      <ul>
+        <li>
+          Chromecast e Airplay disponíveis. 
+        </li>
+      </ul>
+      
+    </div>
+    <div class="col-1">
+      <ul>
+        <li>
+          Assista em até 3 telas ao mesmo tempo. 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+      <ul>
+        <li>Tenha conteúdo em alta definição, com qualidade 4K. </li>
+      </ul>
+    </div>
+    <div class="col-1">
+      <ul>
+        <li>
+          Baixe suas séries e filmes favoritos, assista onde e quando quiser.  
+        </li>
+      </ul>
+      
+    </div>
+    <div class="col-1">
+      <ul>
+        <li>
+          Crie até 5 perfis diferentes.
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1> 1 mês</h1>
+      <h2>R$ 19,90</h2>
+      <h3>plano básico</h3>
+      <button>assine aqui</button>
+    </div>
+    <div class="col">
+      <h1> 3 meses</h1>
+      <h2> R$ 54,90</h2>
+      <h3>Igual a R$ 18,30 por mês </h3>
+      <button>assine aqui</button>
+    </div>
+    <div class="col">
+      <h1> 12 meses</h1>
+      <h2> R$ 199,90</h2>
+      <h3>Igual a R$ 16,60 por mês </h3>
+      <button>assine aqui</button>
+    </div>
+    
+  </div>
+</div>
+
+<div class="titulo-antecipado">
+  <h3>Necessário pagamento antecipado. Economia baseada no preço do plano multitelas anual comparado ao preço do plano multitelas mensal durante 12 meses, </h3>
+  <h4>excluindo impostos. Termos se aplicam.</h4>
+</div>
+
+
+
+
+
+
+
 
 
 </template>
 
 <style scoped>
+
+.titulo-antecipado h3{
+  text-align: center;
+  font-size: 12px;
+  color: white;
+  margin-top: 2%;
+
+}
+
+.titulo-antecipado h4{
+  text-align: center;
+  font-size: 12px;
+  color: white;
+}
+.col-1{
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  width: 22%;
+  text-align: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  
+}
+.titulo-planos{
+  color: white;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.lista{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+.col{
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient( rgb(3, 10, 97), rgb(2, 4, 32) 70%);
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  border-radius: 10px;
+  height: 320px;
+  width: auto;
+}
+
+.col h1{
+  margin-top: 5%;
+  font-size: 35px;
+  font-family: 'Anek Malayalam', sans-serif;
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Lexend', sans-serif;
+}
+
+.col h2{
+  margin-top: 5%;
+  font-size: 50px;
+  font-family: 'Anek Malayalam', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Lexend', sans-serif;
+}
+
+.col h3{
+  margin-top: 5%;
+  font-size: 15px;
+  font-family: 'Anek Malayalam', sans-serif;
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Lexend', sans-serif;
+}
+
+.col button{
+  margin-top: 90px;
+  border-radius: 20px;
+  background-image: linear-gradient(45deg, rgb(113, 36, 255) 0,0001%, rgb(7, 12, 85)  );
+  border-color: rgb(35, 45, 175);
+  color: white;
+  font-size: 25px;
+  width: 90%;
+  height: 16%;
+  font-family: 'Anek Malayalam', sans-serif;
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Lexend', sans-serif;
+}
+
+.col button:hover{
+  background-image: linear-gradient(45deg, rgb(27, 8, 63) 0,0001%, rgb(2, 5, 34)  ); 
+  color: black;
+  transition: 0.7s;
+  color: white;
+  border-color: rgb(120, 47, 255);
+
+}
+
+
 .navbar{
   background-color: rgb(1, 2, 19);
 
@@ -61,7 +254,7 @@ color: white;
 }
 
 .btn-2:hover{
-  background: rgb(255, 255, 255);
+  background: white;
   transition: 0.5s;
   color: black;
   
@@ -155,6 +348,16 @@ color: white;
       width: auto;
       height: 100%;
     }
+}
+
+.planos{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 
