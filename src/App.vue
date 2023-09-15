@@ -12,7 +12,7 @@
 
 <div class="gratis">
   <video autoplay loop muted class="clipe-fundo">
-  <source src="./imagensdocarousel3/cenamarvelcompleta.mp4" type="video/webm">
+  <source src="./components/videos/marvelcenasoficial.mp4" type="video/mp4">
 </video>
 <div class="gratis2">
   <h1>divirta-se</h1>
