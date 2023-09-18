@@ -228,6 +228,7 @@ font-family: 'Lexend', sans-serif;
 .navbar button{
   font-family: 'Anek Malayalam', sans-serif;
   font-family: 'Lexend', sans-serif;
+  font-size: 15px;
 }
 
 .navbar a{
