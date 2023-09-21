@@ -1,14 +1,10 @@
 <script setup>
+import HeaderStreamHub from './components/HeaderStreamHub.vue'
+import FooterStreamHub from './components/FooterStreamHub.vue'
 </script>
 
 <template>
-  <nav class="navbar">
-  <form class="container-fluid justify-content-start">
-    <a class="navbar-brand" href="#">STREAMHUB</a>
-    <button class="btn-1 " type="button">Entrar</button>
-    <button class="btn-2 text-color" type="button">Assine Agora</button>
-  </form>
-</nav>
+  <HeaderStreamHub />
 
 <div class="gratis">
   <video autoplay loop muted class="clipe-fundo">
@@ -106,31 +102,7 @@
   <h3>Necessário pagamento antecipado. Economia baseada no preço do plano multitelas anual comparado ao preço do plano multitelas mensal durante 12 meses, </h3>
   <h4>excluindo impostos. Termos se aplicam.</h4>
 </div>
-
-<div class="card text-center">
-  <div class="card-header">
-    STREAMHUB
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Alguma dúvida? Entre em contato</h5>
-    <p class="card-text">Dispostos a solucionar qualquer problema</p>
-    <a href="#" class="link">Privacidade</a>
-    <a href="#" class="link">Suporte</a>
-    <a href="#" class="link">Perguntas frequentes</a>
-    <a href="#" class="link">Termos de uso</a>
-    <h3>©StreamHub direct media, America, LLC. Todos os direitos reservados. StreamHub é usado sob licença.</h3>
-  </div>
-  
-</div>
-
-
-
-
-
-
-
-
-
+<FooterStreamHub />
 </template>
 
 <style scoped>
@@ -261,56 +233,6 @@ font-family: 'Lexend', sans-serif;
   color: white;
   border-color: rgb(120, 47, 255);
 
-}
-
-
-.navbar{
-  background-color: rgb(1, 2, 19);
-
-}
-
-.navbar button{
-  font-family: 'Anek Malayalam', sans-serif;
-  font-family: 'Lexend', sans-serif;
-  font-size: 15px;
-}
-
-.navbar a{
-  font-family: 'Anek Malayalam', sans-serif;
-font-family: 'IBM Plex Sans', sans-serif;
-font-family: 'Lexend', sans-serif;
-  font-size: 20px;
-}
-
-
-.navbar-brand{
-  color: white;
-  margin-right: 82%;
-  font-size: 22px;
-}
-
-.btn-1{
-background: transparent;
-border: none;
-margin-right: 1%;
-color: white;
-
-  
-}
-
-.btn-2:hover{
-  background: white;
-  transition: 0.5s;
-  color: black;
-  
-  
-}
-.btn-2{
-  border-radius: 60px;
-  background-color: rgb(35, 45, 175);
-  border-color: rgb(35, 45, 175);
-  
-  
 }
 
 .text-color{
