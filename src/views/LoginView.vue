@@ -7,18 +7,23 @@
   <div class="login">
     <form class="login2">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <label for="exampleInputEmail1" class="form-label">Você tem uma conta no StreamHub?</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1">
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Entrar</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <button type="submit" class="btn">Entrar</button>
+            </div>
+            <div class="col-1">
+                <a href="#" class="btn2">Esqueceu a senha?</a>
+            </div>
+        </div>
+    </div>
+    
 </form>
 </div>
 </template>
@@ -30,22 +35,50 @@
     align-items: center;
     text-align: center;
     width: 200px;
-    margin-left: 24.1%;
+    margin-left: 20%;
     margin-top: 8%;
     margin-bottom: 6.3%; 
-    border: solid 5px;
-    border-radius: 15px;
+    border: solid 2px;
+    border-radius: 12px;
     padding: 30px;
-    height: 30rem;
-    width: 60rem;
-    border-color: blue;
+    height: 32rem;
+    width: 70rem;
+    color: white;
 }
 
 .form-control{
     background-color: transparent;
-    border: solid 2px;
-    border-color: blue;
+    border: solid 1px;
+    color: white;
+    margin-bottom: 2.5%;
+    height: 3.5rem;
+    
 }
+
+.form-label{
+    margin-right: 76%;
+    color: white;
+    font-size: 15px;
+}
+
+.btn{
+    background-color: rgb(48, 48, 170);
+    color: white;
+    width: 9rem;
+    height: 2.8rem;
+    
+
+
+}
+
+.btn2{
+    color: rgb(83, 83, 255);
+    font-size: 15px;
+    
+    
+}
+
+
 
 
 
