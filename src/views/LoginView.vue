@@ -4,10 +4,11 @@
 </script>
 
 <template>
+    <h1 class="titulo">Entrar</h1>
   <div class="login">
     <form class="login2">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Você tem uma conta no StreamHub?</label>
+    <label for="exampleInputEmail1" class="form-label pergunta">Você tem uma conta no StreamHub?</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
   </div>
   <div class="mb-3">
@@ -23,27 +24,40 @@
             </div>
         </div>
     </div>
-    
+    <p id="texto-ajuda">Qualquer dúvida contate o suporte</p>
 </form>
 </div>
 </template>
 
 <style scoped>
-
+.pergunta{
+    width: 20rem;
+}
+.titulo{
+    margin-left: 47.5%;
+    margin-top: 2%;
+    color: white;
+    font-family: 'Anek Malayalam', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Lexend', sans-serif;
+}
 .login{
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 200px;
     margin-left: 20%;
-    margin-top: 8%;
+    margin-top: 2%;
     margin-bottom: 6.3%; 
     border: solid 2px;
     border-radius: 12px;
     padding: 30px;
-    height: 32rem;
+    height: 26rem;
     width: 70rem;
     color: white;
+    font-family: 'Anek Malayalam', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Lexend', sans-serif;
 }
 
 .form-control{
@@ -88,6 +102,11 @@
 
 .esqueceu{
     margin-top: 1%;
+    width: 11rem;
+}
+#texto-ajuda{
+    margin-right: 70%;
+    margin-top: 5%;
 }
 
 
