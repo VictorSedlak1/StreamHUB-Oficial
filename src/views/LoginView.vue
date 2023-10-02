@@ -18,7 +18,7 @@
             <div class="col-1">
                 <button type="submit" class="btn">Entrar</button>
             </div>
-            <div class="col-1">
+            <div class="col-1 esqueceu">
                 <a href="#" class="btn2">Esqueceu a senha?</a>
             </div>
         </div>
@@ -74,8 +74,20 @@
 .btn2{
     color: rgb(83, 83, 255);
     font-size: 15px;
+    margin-top: 3%;
     
     
+    
+}
+
+.col-1{
+    margin-right: 3%;
+    width: 15%;
+    
+}
+
+.esqueceu{
+    margin-top: 1%;
 }
 
 
