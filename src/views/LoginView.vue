@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-1">
-                <button type="submit" class="btn">Entrar</button>
+                <router-link class="btn" id="linkBotao" :to="{name: 'Inicio'}">Entrar</router-link>
             </div>
             <div class="col-1 esqueceu">
                 <a href="#" class="btn2">Esqueceu a senha?</a>
