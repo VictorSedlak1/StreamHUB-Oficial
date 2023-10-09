@@ -58,6 +58,8 @@
     font-family: 'Anek Malayalam', sans-serif;
   font-family: 'IBM Plex Sans', sans-serif;
   font-family: 'Lexend', sans-serif;
+  background: rgb(1,3,24);
+background: linear-gradient(151deg, rgba(1,3,24,0.9) 16%, rgba(1,8,37,0.8) 40%, rgba(2,10,60,0.8) 63%, rgba(3,22,77,0.8) 85%);
 }
 
 .form-control{
@@ -76,13 +78,20 @@
 }
 
 .btn{
-    background-color: rgb(48, 48, 170);
+    background: rgb(1,3,150);
+background: linear-gradient(151deg, rgba(1,3,150,0.8) 0%, rgba(2,10,60,1) 100%);
     color: white;
     width: 9rem;
     height: 2.8rem;
     
 
 
+}
+
+.btn:hover{
+    background: transparent;
+    border: solid 2px;
+    border-radius: 7%;
 }
 
 .btn2{

@@ -64,7 +64,7 @@
         <h1>1 mês</h1>
         <h2>R$ 19,90</h2>
         <h3>plano básico</h3>
-        <button>assine aqui</button>
+        <button><router-link class="assine-aqui"  :to="{name: 'Pagamento'}">assine aqui</router-link></button>
       </div>
       <div class="col">
         <h1>3 meses</h1>
@@ -76,7 +76,7 @@
         <h1>12 meses</h1>
         <h2>R$ 199,90</h2>
         <h3>Igual a R$ 16,60 por mês</h3>
-        <button>assine aqui</button>
+        <button class="assine-aqui">assine aqui</button>
       </div>
     </div>
   </div>
@@ -92,6 +92,29 @@
 </template>
 
 <style scoped>
+
+.assine-aqui{
+  margin-top: 90px;
+  border-radius: 20px;
+  
+  border-color: rgb(35, 45, 175);
+  color: white;
+  font-size: 25px;
+  width: 90%;
+  height: 16%;
+  font-family: 'Anek Malayalam', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Lexend', sans-serif;
+  text-decoration: none;
+}
+
+.assine-aqui:hover {
+  background-image: linear-gradient(45deg, rgb(27, 8, 63) 0, 0001%, rgb(2, 5, 34));
+  color: black;
+  transition: 0.7s;
+  color: white;
+  border-color: rgb(120, 47, 255);
+}
 .card-text {
   font-size: 13px;
   margin-bottom: 2%;
