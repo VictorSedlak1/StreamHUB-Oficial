@@ -17,16 +17,6 @@ const routes = [
     component: () => import('../views/InicioView.vue')
   },
   {
-    path: '/inicio',
-    name: 'Inicio',
-    component: () => import('../views/InicioView.vue')
-  },
-  {
-    path: '/filmes',
-    name: 'Movies',
-    component: () => import('../views/MoviesView.vue')
-  },
-  {
     path: '/pagamento',
     name: 'Pagamento',
     component: () => import('../views/PagamentoView.vue')

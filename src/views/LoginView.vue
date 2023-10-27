@@ -9,10 +9,10 @@
     <form class="login2">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label pergunta">Você tem uma conta no StreamHub?</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email">  
   </div>
   <div class="mb-3">
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <input type="password" class="form-control" id="exampleInputPassword1" maxlength="8" placeholder="Digite sua senha">
   </div>
     <div class="container">
         <div class="row">
@@ -21,6 +21,7 @@
             </div>
             <div class="col-1 esqueceu">
                 <a href="#" class="btn2">Esqueceu a senha?</a>
+                
             </div>
         </div>
     </div>
