@@ -1,24 +1,17 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import { ref, onMounted } from "vue";
+import api from "@/plugins/axios";
 
-const moviesGenres = ref([])
-const TVGenres = ref([])
+const movies = ref([])
 
 onMounted(async () => {
-  let response = await axios.get('https://api.themoviedb.org/3/genre/movie/list?language=pt-BR', {
-    headers: {
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOTc4ZjhiNTdmNTVjNDA1YmI0NGZlMDhiOGFlNTA5MyIsInN1YiI6IjY0ZmYxNTdmZGI0ZWQ2MTA0MzA4ODUxNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mo_m78cfTBFLSTeId2fF_Y1B88toh8_hwb_5KP83fac`
-    }
-  })
-  moviesGenres.value = response.data.genres
-  response =  await axios.get('https://api.themoviedb.org/3/genre/tv/list?language=pt-BR', {
-    headers: {
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOTc4ZjhiNTdmNTVjNDA1YmI0NGZlMDhiOGFlNTA5MyIsInN1YiI6IjY0ZmYxNTdmZGI0ZWQ2MTA0MzA4ODUxNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mo_m78cfTBFLSTeId2fF_Y1B88toh8_hwb_5KP83fac`
-    }
-  })
-  TVGenres.value = response.data.genres
+  const response = await api.get('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc');
+  movies.value = response.data.results
 })
+
+
+
+
 </script>
 
 <template>
@@ -32,9 +25,42 @@ onMounted(async () => {
   <main>
     <router-view />
   </main>
+
+  <div class="populares">
+      <h1>Populares,</h1>
+      <h2>Apenas os melhores!</h2>
+      <div id="popularesCartaz">
+        <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
+          <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
+          <p class="tituloDeMovie">{{ movie.title }}</p>
+        </div>
+      </div>
+    </div>
 </template>
 
 <style scoped>
+.populares {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+}
+
+#popularesCartaz {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  column-count: 2;
+}
+
+.cartazFilmes {
+  margin: 0 10px;
+}
+
+.cartazFilmes {
+  margin: 0 10px;
+  min-height: 200px;
+}
 nav {
   display: flex;
   justify-content: flex-start;
