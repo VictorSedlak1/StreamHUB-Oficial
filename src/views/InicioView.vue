@@ -61,9 +61,16 @@ onMounted(async () => {
 
 <style scoped>
 
+
 .populares h1{
   font-size: 30px;
   margin-bottom: 30px;
+  color: white;
+  font-family: 'Anek Malayalam', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Lexend', sans-serif;
+  text-decoration: none;
+  
 }
 .populares {
   display: flex;
@@ -81,6 +88,7 @@ onMounted(async () => {
   /* flex-wrap: wrap; */
   width: 98vw;
   column-count: 2;
+  color: white;
 
 }
 
@@ -102,6 +110,7 @@ onMounted(async () => {
 .cartazFilmes {
   margin: 0 10px;
   min-height: 200px;
+  
 
 }
 
@@ -109,6 +118,13 @@ onMounted(async () => {
   width: 10vw;
   border-radius: 10px;
 }
+
+.cartazFilmes:hover {
+  border: solid rgb(159, 43, 226) 3px;
+  border-radius: 12px;
+  transition: .1s;
+}
+
 
 nav {
   display: flex;
