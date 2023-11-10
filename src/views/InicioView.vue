@@ -26,9 +26,30 @@ onMounted(async () => {
     <router-view />
   </main>
 
+
+
   <div class="populares">
-      <h1>Populares,</h1>
-      <h2>Apenas os melhores!</h2>
+      <h1>Os mais populares</h1>
+      <div id="popularesCartaz">
+        <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
+          <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
+          <p class="tituloDeMovie">{{ movie.title }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="populares">
+      <h1>Os mais populares</h1>
+      <div id="popularesCartaz">
+        <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
+          <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
+          <p class="tituloDeMovie">{{ movie.title }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="populares">
+      <h1>Os mais populares</h1>
       <div id="popularesCartaz">
         <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
           <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
@@ -39,28 +60,56 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+
+.populares h1{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
 .populares {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   max-width: 1200px;
 }
 
 #popularesCartaz {
   display: flex;
-  flex-wrap: wrap;
-  width: 50%;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin: 0 auto;
+  /* flex-wrap: wrap; */
+  width: 98vw;
   column-count: 2;
+
 }
 
-.cartazFilmes {
-  margin: 0 10px;
+#popularesCartaz::-webkit-scrollbar {
+  height: 5px;
+  border: 2px solid #d5d5d5;
+  border-radius: 40%;
 }
+
+#popularesCartaz::-webkit-scrollbar-track {  
+  /* border-radius: 0; */
+  background: rgb(39, 0, 90)}
+
+#popularesCartaz::-webkit-scrollbar-thumb {
+  /* border-radius: 0; */
+  background: rgb(159, 43, 226)
+} 
 
 .cartazFilmes {
   margin: 0 10px;
   min-height: 200px;
+
 }
+
+.cartazFilmes img {
+  width: 10vw;
+  border-radius: 10px;
+}
+
 nav {
   display: flex;
   justify-content: flex-start;
