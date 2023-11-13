@@ -44,4 +44,17 @@ onMounted(async () => {
     background-color: #7d8a2e;
     box-shadow: 0 0 0.5rem #5d6424;
   }
-  </style>
+
+  /*.position{
+  position: absolute;
+  margin-left: -200px;
+  /* background-color: aqua; */
+
+  /*display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  /* justify-content: center; */
+
+
+</style>

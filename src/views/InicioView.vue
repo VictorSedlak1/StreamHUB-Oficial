@@ -2,12 +2,14 @@
 import { ref, onMounted } from "vue";
 import api from "@/plugins/axios";
 
+
 const movies = ref([])
 
 onMounted(async () => {
   const response = await api.get('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc');
   movies.value = response.data.results
 })
+
 
 
 
@@ -64,28 +66,13 @@ onMounted(async () => {
   </button>
 </div>
 
-
-
 <header>
-  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
-
-<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-  <div class="offcanvas-header">
+  <nav>
     <router-link to="/filmes">Filmes</router-link>
       <router-link to="/tv">Séries</router-link>
       <router-link to="/">Home</router-link>
-  </div>
-  <div class="offcanvas-body small">
-    ...
-  </div>
-</div>
-    <nav>
-      
-      <router-link to="/filmes">Filmes</router-link>
-      <router-link to="/tv">Séries</router-link>
-      <router-link to="/">Home</router-link>
-    </nav>
-  </header>
+  </nav>
+</header>
 
 
 
