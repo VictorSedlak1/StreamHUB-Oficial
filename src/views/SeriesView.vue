@@ -117,7 +117,7 @@ onMounted(async () => {
   
 <button class="btn btn-primary offcanva" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Gêneros</button>
 <router-link to="/filmes">Filmes</router-link>
-      <router-link to="/Series">Séries</router-link>
+      <router-link to="/tv">Séries</router-link>
       <router-link to="/">Home</router-link>
 
 
