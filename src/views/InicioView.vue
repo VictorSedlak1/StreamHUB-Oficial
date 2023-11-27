@@ -17,16 +17,21 @@ onMounted(async () => {
 })
 
 const movies = ref([]);
+const kids = ref([]);
+const atual = ref('Os mais populares');
+const cartaz = ref([]);
+const gratis = ref([]);
 
-const listMovies = async (genreId) => {
+const listMovies = async (genre) => {
   isLoading.value = true;
   const response = await api.get('discover/movie', {
     params: {
-      with_genres: genreId,
+      with_genres: genre.id,
       language: 'pt-BR'
     }
   });
   movies.value = response.data.results
+  atual.value = genre.name
   isLoading.value = false;
 };
 
@@ -36,6 +41,15 @@ const listMovies = async (genreId) => {
 onMounted(async () => {
   const response = await api.get('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc');
   movies.value = response.data.results
+  
+  const resp_kids = await api.get('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&with_genres=10751&language=en-US&page=1&sort_by=popularity.desc');
+  kids.value = resp_kids.data.results
+
+  const resp_cartaz = await api.get('https://api.themoviedb.org/3/movie/now_playing?language=pt-BR&page=1');
+  cartaz.value = resp_cartaz.data.results
+
+  const resp_gratis = await api.get('https://api.themoviedb.org/3/tv/airing_today?language=en-US&page=1');
+  gratis.value = resp_gratis.data.results
 })
 
 
@@ -109,15 +123,15 @@ onMounted(async () => {
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdroped with scrolling</h5>
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Filmes</h5>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <h1>Filmes</h1>
+    <h1>Gêneros</h1>
   <ul class="genre-list">
-    <li v-for="genre in genres" :key="genre.id" @click="listMovies(genre.id)" class="genre-item">
-    {{ genre.name }}
-</li>
+    <p v-for="genre in genres" :key="genre.id" @click="listMovies(genre)" class="genre-item">
+    {{ genre.name }} {{ genre.id }}
+    </p>
   </ul>
   </div>
 </div>
@@ -129,7 +143,7 @@ onMounted(async () => {
   <loading v-model:active="isLoading" is-full-page />
 
   <div class="populares">
-    <h1>Os mais populares</h1>
+    <h1>{{atual}}</h1>
     <div id="popularesCartaz">
   <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
     <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
@@ -143,9 +157,9 @@ onMounted(async () => {
 
 
   <div class="populares">
-      <h1>Os mais populares</h1>
+      <h1>Área Kids</h1>
       <div id="popularesCartaz">
-        <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
+        <div v-for="movie in kids" :key="movie.id" class="cartazFilmes">
           <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
           <p class="tituloDeMovie">{{ movie.title }}</p>
           
@@ -154,9 +168,9 @@ onMounted(async () => {
     </div>
 
     <div class="populares">
-      <h1>Os mais populares</h1>
+      <h1>Em cartaz</h1>
       <div id="popularesCartaz">
-        <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
+        <div v-for="movie in cartaz" :key="movie.id" class="cartazFilmes">
           <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
           <p class="tituloDeMovie">{{ movie.title }}</p>
         </div>
@@ -164,9 +178,9 @@ onMounted(async () => {
     </div>
 
     <div class="populares">
-      <h1>Os mais populares</h1>
+      <h1>Grátis para assistir</h1>
       <div id="popularesCartaz">
-        <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
+        <div v-for="movie in gratis" :key="movie.id" class="cartazFilmes">
           <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
           <p class="tituloDeMovie">{{ movie.title }}</p>
         </div>
@@ -177,6 +191,30 @@ onMounted(async () => {
 
 
 <style scoped>
+.offcanvas-header{
+  background-color: rgb(1, 3, 24) ;
+}
+.offcanvas{
+  background-color:rgb(0, 3, 34) ;
+  color: white;
+
+}
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 40%;
+}
+
+::-webkit-scrollbar-track {  
+  /* border-radius: 0; */
+  background: rgb(39, 0, 90);
+}
+
+::-webkit-scrollbar-thumb {
+  /* border-radius: 0; */
+  background: rgb(159, 43, 226);
+  border-radius: 15px;
+  width: 5%;
+} 
 .offcanva:hover{
 background-color: rgb(7, 0, 68);
 transition: 0.5s;
@@ -197,25 +235,27 @@ transition: 0.5s;
   text-decoration: none;
 }
 .genre-list {
-  display: flex;
+  font-size: 25px;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  list-style: none;
-  margin-bottom: 2rem;
+  padding: 5%;
+  
 }
 
 .genre-item {
-  background-color: #387250;
-  border-radius: 1rem;
+ 
+  border: solid 2px;
+  border-radius: 10px;
+  margin-bottom: 10px;
   padding: 0.5rem 1rem;
   color: #fff;
 }
 
 .genre-item:hover {
+  color: white;
   cursor: pointer;
-  background-color: #4e9e5f;
-  box-shadow: 0 0 0.5rem #387250;
+  transition: 0.5s;
+  background-color: #8c4ffd;
+  
 }
 
 .movie-list {
