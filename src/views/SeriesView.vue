@@ -39,16 +39,16 @@ const listMovies = async (genre) => {
 
 
 onMounted(async () => {
-  const response = await api.get('https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=1');
+  const response = await api.get('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1' );
   movies.value = response.data.results
   
-  const resp_kids = await api.get('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&with_genres=10751&language=pt-BR&page=1&sort_by=popularity.desc');
+  const resp_kids = await api.get('https://api.themoviedb.org/3/tv/airing_today?language=en-US&page=1' );
   kids.value = resp_kids.data.results
 
-  const resp_cartaz = await api.get('https://api.themoviedb.org/3/movie/now_playing?language=pt-BR&page=1');
+  const resp_cartaz = await api.get('https://api.themoviedb.org/3/tv/on_the_air?language=en-US&page=1' );
   cartaz.value = resp_cartaz.data.results
 
-  const resp_avaliados = await api.get('https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=1');
+  const resp_avaliados = await api.get('https://api.themoviedb.org/3/tv/popular?language=en-US&page=1' );
   avaliados.value = resp_avaliados.data.results
 })
 
@@ -116,8 +116,7 @@ onMounted(async () => {
 
   
 <button class="btn btn-primary offcanva" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Gêneros</button>
-<router-link to="/filmes">Filmes</router-link>
-      <router-link to="/tv">Séries</router-link>
+<router-link to="/inicio">Filmes</router-link>
       <router-link to="/">Home</router-link>
 
 
@@ -143,7 +142,7 @@ onMounted(async () => {
   <loading v-model:active="isLoading" is-full-page />
 
   <div class="populares">
-    <h1>Os mais populares</h1>
+    <h1>Melhores Avaliados</h1>
     <div id="popularesCartaz">
   <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
     <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
@@ -157,7 +156,7 @@ onMounted(async () => {
 
 
   <div class="populares">
-      <h1>Área Kids</h1>
+      <h1>Na TV</h1>
       <div id="popularesCartaz">
         <div v-for="movie in kids" :key="movie.id" class="cartazFilmes">
           <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
@@ -168,7 +167,7 @@ onMounted(async () => {
     </div>
 
     <div class="populares">
-      <h1>Em cartaz</h1>
+      <h1>Mais populares</h1>
       <div id="popularesCartaz">
         <div v-for="movie in cartaz" :key="movie.id" class="cartazFilmes">
           <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
@@ -178,7 +177,7 @@ onMounted(async () => {
     </div>
 
     <div class="populares">
-      <h1>Melhores avaliados</h1>
+      <h1>Recomendados</h1>
       <div id="popularesCartaz">
         <div v-for="movie in avaliados" :key="movie.id" class="cartazFilmes">
           <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
