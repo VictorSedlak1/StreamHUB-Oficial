@@ -14,7 +14,7 @@ onMounted(async () => {
 
 const fetchMovieDetails = async (id) => {
   try {
-    const response = await api.get(`movie/${id}`, {
+    const response = await api.get(`tv/${id}`, {
       params: {
         language: 'pt-BR'
       }
@@ -39,10 +39,9 @@ const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR')
             width="300"
             class="img-movie"
           />
-          
           <div class="info-movie">
-            <h1 class="title">{{ movie.title }}</h1>
-            <p class="movie-date mt-3 mb-3">{{ formatDate(movie.release_date) }}</p>
+            <h1 class="title">{{ movie.name }}</h1>
+            <p class="movie-date mt-3 mb-3">{{ formatDate(movie.first_air_date) }}</p>
             <p class="mt-4">Avaliações de Usúario</p>
             <p>{{ movie.vote_average }}</p>
             <h2 class="sinopse mt-7">Sinopse</h2>

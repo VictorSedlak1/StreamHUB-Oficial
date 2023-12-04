@@ -39,6 +39,13 @@ const router = createRouter({
       component: () => import('../views/ReviewView.vue'),
       props: true
     },
+    {
+      path: '/SolosTv/:id',
+      name: 'SolosTv',
+      component: () => import('../views/ReviewViewTV.vue'),
+      props: true
+    }
+    
     
   ]
 })

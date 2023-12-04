@@ -190,6 +190,7 @@ onMounted(async () => {
 
 
 <style scoped>
+
 .offcanvas-header{
   background-color: rgb(1, 3, 24) ;
 }

@@ -145,8 +145,8 @@ onMounted(async () => {
     <h1>Melhores Avaliados</h1>
     <div id="popularesCartaz">
   <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
-    <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
-      <p class="tituloDeMovie">{{ movie.title }}</p>
+    <router-link :to="`/SolosTv/${movie.id}`"><img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" /></router-link>
+      <p class="tituloDeMovie">{{ movie.name }}</p>
     </div>
     
   </div>
@@ -159,8 +159,8 @@ onMounted(async () => {
       <h1>Na TV</h1>
       <div id="popularesCartaz">
         <div v-for="movie in kids" :key="movie.id" class="cartazFilmes">
-          <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
-          <p class="tituloDeMovie">{{ movie.title }}</p>
+          <router-link :to="`/SolosTv/${movie.id}`"><img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" /></router-link>
+          <p class="tituloDeMovie">{{ movie.name }}</p>
           
         </div>
       </div>
@@ -170,8 +170,8 @@ onMounted(async () => {
       <h1>Mais populares</h1>
       <div id="popularesCartaz">
         <div v-for="movie in cartaz" :key="movie.id" class="cartazFilmes">
-          <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
-          <p class="tituloDeMovie">{{ movie.title }}</p>
+          <router-link :to="`/SolosTv/${movie.id}`"><img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" /></router-link>
+          <p class="tituloDeMovie">{{ movie.name }}</p>
         </div>
       </div>
     </div>
@@ -180,8 +180,8 @@ onMounted(async () => {
       <h1>Recomendados</h1>
       <div id="popularesCartaz">
         <div v-for="movie in avaliados" :key="movie.id" class="cartazFilmes">
-          <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
-          <p class="tituloDeMovie">{{ movie.title }}</p>
+          <router-link :to="`/SolosTv/${movie.id}`"><img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" /></router-link>
+          <p class="tituloDeMovie">{{ movie.name }}</p>
         </div>
       </div>
     </div>
