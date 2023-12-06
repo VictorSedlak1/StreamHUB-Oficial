@@ -117,6 +117,7 @@ onMounted(async () => {
   
 <button class="btn btn-primary offcanva" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Gêneros</button>
       <router-link to="/Series">Séries</router-link>
+      
       <router-link to="/">Home</router-link>
 
 
@@ -128,9 +129,9 @@ onMounted(async () => {
   <div class="offcanvas-body">
     <h1>Gêneros</h1>
   <ul class="genre-list">
-    <p v-for="genre in genres" :key="genre.id" @click="listMovies(genre)" class="genre-item">
+   <p v-for="genre in genres" :key="genre.id" @click="listMovies(genre.id)" class="genre-item">
     {{ genre.name }} {{ genre.id }}
-    </p>
+    </p> 
   </ul>
   </div>
 </div>
@@ -190,7 +191,51 @@ onMounted(async () => {
 
 
 <style scoped>
+#popularesCartaz {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin: 0 auto;
+  /* flex-wrap: wrap; */
+  width: 98vw;
+  column-count: 2;
+  color: white;
+  height: 22vw;
+  background: rgb(1,3,24);
+background: linear-gradient(0deg, rgba(1,3,24,1) 5%, rgba(11,11,91,1) 50%, rgba(1,3,24,1) 95%);
 
+}
+.cartazFilmes img{
+  border: solid rgb(159, 43, 226) 3px;
+  width: 10vw;
+  border-radius: 10px;
+}
+.cartazFilmes img:hover{
+  margin-top: 15px;
+  opacity: 0.6;
+  transition: 0.4s ease;
+  backface-visibility: hidden;
+  background-color: #8c4ffd;
+}
+
+.cartazFilmes:hover {
+  margin: 0 10px;
+  min-height: 98px;
+  
+
+}
+.cartazFilmes {
+  margin: 0 10px;
+  height: 320px;
+  margin-top: 30px;
+  
+  
+
+}
+.cartazFilmes:hover{
+  transform: scale(1.07);
+  transition: 0.4s;
+}
 .offcanvas-header{
   background-color: rgb(1, 3, 24) ;
 }
@@ -369,19 +414,10 @@ transition: 0.5s;
   justify-content: center;
   /* align-items: center; */
   max-width: 1200px;
+  
 }
 
-#popularesCartaz {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  margin: 0 auto;
-  /* flex-wrap: wrap; */
-  width: 98vw;
-  column-count: 2;
-  color: white;
 
-}
 
 #popularesCartaz::-webkit-scrollbar {
   height: 5px;
@@ -397,24 +433,6 @@ transition: 0.5s;
   /* border-radius: 0; */
   background: rgb(159, 43, 226)
 } 
-
-.cartazFilmes {
-  margin: 0 10px;
-  min-height: 200px;
-  
-
-}
-
-.cartazFilmes img {
-  width: 10vw;
-  border-radius: 10px;
-}
-
-.cartazFilmes:hover {
-  border: solid rgb(159, 43, 226) 3px;
-  border-radius: 12px;
-  transition: .1s;
-}
 
 
 nav {

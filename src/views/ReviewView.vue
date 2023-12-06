@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import api from '@/plugins/axios'
+import Loading from 'vue-loading-overlay'
 
 const movies = ref([])
 const props = defineProps({
@@ -29,6 +30,7 @@ const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR')
 </script>
 
 <template>
+  
   <div v-for="movie in movies" :key="movie.id">
     <div class="backdrop">
       <div class="container-main">
