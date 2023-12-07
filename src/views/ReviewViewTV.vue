@@ -55,14 +55,18 @@ const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR')
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
 .container-main {
-  max-width: 1420px;
+  background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 25%, rgba(12,12,128,1) 50%, rgba(159,43,226,1) 100%);
+  max-width: 100%;
   clear: both;
   margin: 0 auto;
 }
 
 .container-movie {
   display: flex;
+  margin-left: 100px;
 }
 
 .title {
@@ -71,7 +75,9 @@ const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR')
 }
 .trailer {
   font-size: 22px;
-  font-weight: bold;
+  font-family: 'Anek Malayalam', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Lexend', sans-serif;
 }
 
 .img-movie {
@@ -79,18 +85,23 @@ const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR')
   margin-top: 3.5em;
   margin-bottom: 3.5em;
   border: groove;
-  border-color: #6500ad;
+  border-color: rgb(159, 43, 226);
+  margin-right: 100px;
 }
 .info-movie {
   padding: 15px;
   margin-top: 4.5em;
   text-align: center;
-  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-family: 'Anek Malayalam', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Lexend', sans-serif;
 }
 
 .sinopse {
   font-size: 25px;
-  font-weight: bold;
+  font-family: 'Anek Malayalam', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Lexend', sans-serif;
 }
 
 .backdrop {

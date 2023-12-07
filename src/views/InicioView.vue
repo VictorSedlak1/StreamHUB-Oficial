@@ -3,9 +3,7 @@ import { ref, onMounted } from "vue";
 import api from "@/plugins/axios";
 import Loading from 'vue-loading-overlay'
 
-const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR')
 
-const getGenreName = (id) => genres.value.find((genre) => genre.id === id).name
 
 const isLoading = ref(false);
 
@@ -129,6 +127,7 @@ onMounted(async () => {
   <div class="offcanvas-body">
     <h1>Gêneros</h1>
   <ul class="genre-list">
+    <router-link to="/acao">acao</router-link>
    <p v-for="genre in genres" :key="genre.id" @click="listMovies(genre.id)" class="genre-item">
     {{ genre.name }} {{ genre.id }}
     </p> 
@@ -191,6 +190,11 @@ onMounted(async () => {
 
 
 <style scoped>
+.tituloDeMovie{
+  font-family: 'Anek Malayalam', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Lexend', sans-serif;
+}
 #popularesCartaz {
   display: flex;
   flex-direction: row;
