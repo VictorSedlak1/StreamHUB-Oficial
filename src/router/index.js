@@ -45,11 +45,15 @@ const router = createRouter({
       component: () => import('../views/ReviewViewTV.vue'),
       props: true
     },
+    
     {
-      path: '/acao',
-      name: 'acao',
-      component: () => import('../views/generos/AcaoView.vue')
+      path: '/Genero/:id',
+      name: 'Genero',
+      component: () => import('../views/GenerosView.vue'),
+      props: true
     },
+   
+
     
     
   ]

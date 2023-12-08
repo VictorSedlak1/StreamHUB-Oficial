@@ -3,7 +3,7 @@
 <template>
   <nav class="navbar">
     <form class="container-fluid justify-content-start">
-      <a class="navbar-brand" href="#">STREAMHUB</a>
+      <router-link to="/inicio" class="navbar-brand"><a  href="#">STREAMHUB</a></router-link>
       <router-link class="button1" id="linkBotao" :to="{name: 'Login'}">Entrar</router-link>
       <button class="btn-2 text-color" type="button">Assine Agora</button>
     </form>
@@ -26,6 +26,8 @@
   font-family: 'IBM Plex Sans', sans-serif;
   font-family: 'Lexend', sans-serif;
   font-size: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 .navbar-brand {
