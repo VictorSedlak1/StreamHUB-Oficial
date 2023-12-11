@@ -2,20 +2,20 @@
 import { onMounted, ref } from 'vue'
 import api from '@/plugins/axios'
 
-const movies = ref([])
+const series = ref([])
 const props = defineProps({
   id: Number
 })
 
 onMounted(async () => {
   const movieDetails = await fetchMovieDetails(props.id)
-  movies.value = movieDetails.results
+  series.value = movieDetails.results
 })
 
 const fetchMovieDetails = async (id) => {
   try {
     const response = await api.get(
-      `discover/movie?include_adult=false&include_video=false&with_genres=${id}&page=1`,
+      `discover/tv?include_adult=false&include_video=false&with_genres=${id}&page=1`,
       {
         params: {
           language: 'pt-BR',
@@ -34,7 +34,7 @@ const fetchMovieDetails = async (id) => {
 <template>
     <div class="populares">
       <div id="popularesCartaz">
-        <div v-for="movie in movies" :key="movie.id" class="cartazFilmes">
+        <div v-for="movie in series" :key="movie.id" class="cartazFilmes">
           <router-link :to="`/Solos/${movie.id}`"
             ><img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title"
           /></router-link>
@@ -42,7 +42,6 @@ const fetchMovieDetails = async (id) => {
       </div>
     </div>
 </template>
-
 
 <style scoped>
 .cartazFilmes img:hover {

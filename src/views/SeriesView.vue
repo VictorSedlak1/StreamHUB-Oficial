@@ -3,9 +3,6 @@ import { ref, onMounted } from "vue";
 import api from "@/plugins/axios";
 import Loading from 'vue-loading-overlay'
 
-const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR')
-
-const getGenreName = (id) => genres.value.find((genre) => genre.id === id).name
 
 const isLoading = ref(false);
 
@@ -129,7 +126,8 @@ onMounted(async () => {
     <h1>Gêneros</h1>
   <ul class="genre-list">
     <p v-for="genre in genres" :key="genre.id" @click="listMovies(genre)" class="genre-item">
-    {{ genre.name }} {{ genre.id }}
+      <router-link :to="`/GeneroTv/${genre.id}`"
+          >{{ genre.name }} {{ genre.id }}</router-link>
     </p>
   </ul>
   </div>

@@ -52,6 +52,12 @@ const router = createRouter({
       component: () => import('../views/GenerosView.vue'),
       props: true
     },
+    {
+      path: '/GeneroTv/:id',
+      name: 'GeneroTv',
+      component: () => import('../views/GenerosSeriesView.vue'),
+      props: true
+    },
    
 
     
